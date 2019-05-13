@@ -4,6 +4,10 @@
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
 
+file '/etc/machine-id' do
+  content 'anthony1234'
+end
+
 package 'httpd' do
   action :install
 end
