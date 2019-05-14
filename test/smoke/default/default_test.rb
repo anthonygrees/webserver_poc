@@ -10,9 +10,16 @@ describe port(8080) do
   it { should be_listening }
 end
 
+# The use of curl is a terrible way to test!
 describe command('curl localhost:8080') do
   its('stdout') { should match ('Hello, world')}
 end
+
+describe http('http://localhost:8080') do
+  its('status') { should cmp 200 }
+  its('body') { should eq '<h1>Hello, world!</h1>\n' }
+end
+
 
 control 'Linux VERSION' do
   impact 0.8
