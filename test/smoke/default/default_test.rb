@@ -19,11 +19,11 @@ control 'Linux VERSION' do
   title 'This test checks for a minimum Linux version'
 
   describe os.family do
-    it { should eq 'centos' }
+    it { should eq 'redhat' }
   end
 
   describe os.name do
-    it { should eq 'centos6' }
+    it { should eq 'centos' }
   end
 
   describe os.release do
