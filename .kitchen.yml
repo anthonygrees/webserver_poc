@@ -41,5 +41,8 @@ suites:
       - recipe[webserver::default]
     verifier:
       inspec_tests:
+# Old structure
         - test/smoke/default
+# New structure is...
+#       - test/integration/default
     attributes:
