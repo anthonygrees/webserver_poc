@@ -3,7 +3,7 @@ driver:
   name: ec2
   aws_ssh_key_id: chef_demo_2x
   region: us-west-2
-  security_group_ids: sg-2560a741
+  security_group_ids: sg-091472147f385310a
   associate_public_ip: true
   instance_type: t2.micro
   tags:
@@ -41,8 +41,5 @@ suites:
       - recipe[webserver::default]
     verifier:
       inspec_tests:
-# Old structure
-        - test/smoke/default
-# New structure is...
-#       - test/integration/default
+      - test/integration/default
     attributes:
