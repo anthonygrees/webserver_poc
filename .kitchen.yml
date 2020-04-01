@@ -16,7 +16,7 @@ driver:
     X-Dept: "sales"
     X-Customer: "Rees"
     X-Project: "BJC-Demo"
-    X-Termination-Date: "2018-07-20T12:04:30Z"
+    X-Termination-Date: "2020-07-20T12:04:30Z"
     X-TTL: 4
 
 provisioner:
@@ -42,8 +42,5 @@ suites:
       - recipe[webserver::default]
     verifier:
       inspec_tests:
-# Old structure
-        - test/smoke/default
-# New structure is...
-#       - test/integration/default
+      - test/integration/default
     attributes:
