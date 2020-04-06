@@ -2,9 +2,11 @@
 driver:
   name: ec2
   aws_ssh_key_id: chef_demo_2x
-  region: us-west-2
-  security_group_ids: sg-0d852279ebcfe3b7e
-  subnet_id: subnet-0bdabfed0de46cc83
+  region: <%= ENV['AWS_REGION'] %>
+  security_group_ids: 
+    - <%= ENV['AWS_SECURITY_GROUP_ID'] %>
+  subnet_id: <%= ENV['AWS_SUBNET_ID'] %>
+  vpc_id: <%= ENV['AWS_VPC_ID'] %>
   associate_public_ip: true
   instance_type: t2.micro
   tags:
@@ -16,7 +18,6 @@ driver:
     X-Dept: "sales"
     X-Customer: "Rees"
     X-Project: "BJC-Demo"
-    X-Termination-Date: "2020-07-20T12:04:30Z"
     X-TTL: 4
 
 provisioner:
