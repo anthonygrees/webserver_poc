@@ -1,7 +1,7 @@
 ---
 driver:
   name: ec2
-  aws_ssh_key_id: chef_demo_2x
+  aws_ssh_key_id: <%= ENV['AWS_KEYPAIR'] %>
   region: <%= ENV['AWS_REGION'] %>
   security_group_ids: 
     - <%= ENV['AWS_SECURITY_GROUP_ID'] %>
